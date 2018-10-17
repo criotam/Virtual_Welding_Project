@@ -1,0 +1,26 @@
+5.6.2f1:3.1.0.0
+StandaloneWindows
+P:/unity game/Editor/Data/Managed/UnityEngine.dll
+P:/unity game/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll
+P:/unity game/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll
+P:/unity game/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll
+P:/unity game/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll
+P:/unity game/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll
+P:/unity game/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll
+P:/unity game/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll
+P:/unity game/Editor/Data/Managed/UnityEditor.dll
+P:/unity game/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll
+P:/unity game/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll
+P:/unity game/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll
+P:/unity game/Editor/Data/UnityExtensions/Unity/TestRunner/Editor/UnityEditor.TestRunner.dll
+P:/unity game/Editor/Data/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll
+P:/unity game/Editor/Data/UnityExtensions/Unity/UnityAnalytics/Editor/UnityEditor.Analytics.dll
+P:/unity game/Editor/Data/UnityExtensions/Unity/UnityHoloLens/Editor/UnityEditor.HoloLens.dll
+P:/unity game/Editor/Data/UnityExtensions/Unity/UnityPurchasing/Editor/UnityEditor.Purchasing.dll
+P:/unity game/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll
+P:/unity game/Editor/Data/Managed/UnityEditor.Graphs.dll
+P:/unity game/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+P:/unity game/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+P:/unity game/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll
+P:/unity game/Editor/Data/PlaybackEngines/Facebook/UnityEditor.Facebook.Extensions.dll
+C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll
