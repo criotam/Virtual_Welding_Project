@@ -1,19 +1,27 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TouchDown : MonoBehaviour {
 	public GameObject sparks;
 	public GameObject beads;
-	void OnCollisionEnter(Collision obj){
-		if (obj.gameObject.CompareTag("WP")) {
-			sparks.SetActive (true);
 
+    Controls control;
+
+    void Start()
+    {
+        control = GameObject.FindGameObjectWithTag("Controls").GetComponent<Controls>();
+    }
+
+	void OnCollisionEnter(Collision obj){
+        
+        if (obj.gameObject.CompareTag("WP") && Controls.CurrentState == "CloseToTable")  {
+            control.CHangeState(4);
+            Debug.Log(Controls.CurrentState);
+            sparks.SetActive (true);
 		}
 
 	}
 	void OnCollisionStay(Collision obj){
-		if (obj.gameObject.CompareTag("WP")) {
+		if (obj.gameObject.CompareTag("WP") && Controls.CurrentState == "Welding") {
 			ContactPoint contact = obj.contacts [0];
 			Quaternion rot = Quaternion.FromToRotation (Vector3.up, contact.normal);
 			Vector3 pos = contact.point;
@@ -22,7 +30,12 @@ public class TouchDown : MonoBehaviour {
 
 	}
 	void OnCollisionExit(Collision collision){
-		sparks.SetActive (false);
-
+        
+        if (Controls.CurrentState == "Welding")
+        {
+            control.CHangeState(3);
+            Debug.Log(Controls.CurrentState);
+            sparks.SetActive(false);
+        }
 	}
 }
