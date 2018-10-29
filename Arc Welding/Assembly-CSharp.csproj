@@ -158,10 +158,13 @@
      <Compile Include="Assets\GoogleVR\Scripts\Utilities\GvrUIHelpers.cs" />
      <Compile Include="Assets\GoogleVR\Scripts\Utilities\GvrVRHelpers.cs" />
      <Compile Include="Assets\GoogleVR\Scripts\Video\GvrVideoPlayerTexture.cs" />
-     <Compile Include="Assets\Scripts\ContrllerCallibration.cs" />
+     <Compile Include="Assets\Scripts\BeadAnalysis.cs" />
+     <Compile Include="Assets\Scripts\ControllerCalliborator.cs" />
      <Compile Include="Assets\Scripts\Controls.cs" />
      <Compile Include="Assets\Scripts\GunMovement.cs" />
      <Compile Include="Assets\Scripts\Helmet.cs" />
+     <Compile Include="Assets\Scripts\Menu.cs" />
+     <Compile Include="Assets\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\TouchDown.cs" />
      <None Include="Assets\GoogleVR\Shaders\GvrUIOverlayFont.shader" />
      <None Include="Assets\GoogleVR\Shaders\GvrAdditiveOverlay.shader" />

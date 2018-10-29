@@ -1,22 +1,17 @@
 ﻿using UnityEngine;
 
 public class Helmet : MonoBehaviour {
-    //public Vector3 pos;
-    //public Quaternion rot;
-    //public float distance;
+
+    public GameObject HelmetPosition;
     public float Distance;
     Controls control;
     bool pointingTo;
     bool HelmetOn;
     void Start()
     {
-        
         pointingTo = false;
         HelmetOn = false;
         control = GameObject.FindGameObjectWithTag("Controls").GetComponent<Controls>();
-        //pos = this.transform.position;
-        //rot = this.transform.rotation;
-        //distance = Vector3.Distance(pos, GameObject.FindGameObjectWithTag("Player").transform.position);
     }
 
 	void Update()
@@ -24,31 +19,26 @@ public class Helmet : MonoBehaviour {
         
         if (Input.GetButtonDown("Fire1") && Controls.CurrentState == "EmptyHand" && pointingTo == true)
         {
-            control.CHangeState(1);
+            Controls.SwitchToHelmetOn();
             Debug.Log(Controls.CurrentState);
             HelmetOn = true;
             gameObject.GetComponentInChildren<MeshCollider>().enabled = false;
         }
         else if (Input.GetButtonDown("Fire3") && Controls.CurrentState == "HelmetOn")
         {
-            control.CHangeState(0);
+            Controls.SwitchToEmptyhand();
+            this.gameObject.transform.position = HelmetPosition.transform.position;
+            this.gameObject.transform.rotation = HelmetPosition.transform.rotation;
             HelmetOn = false;
             gameObject.GetComponentInChildren<MeshCollider>().enabled = true;
+            Debug.Log(Controls.CurrentState);
         }
         if (HelmetOn)
         {
             this.transform.rotation = Camera.main.transform.rotation;
             this.transform.position = Camera.main.transform.position + Camera.main.transform.forward * Distance;
         }
-    }
 
-    void FixedUpdate()
-    {
-        //this.transform.position = Camera.main.transform.position + Camera.main.transform.forward * 0.1025671f;
-        //pos = this.transform.position;
-        //rot = this.transform.rotation;
-        //distance = Vector3.Distance(pos, GameObject.FindGameObjectWithTag("Player").transform.position);
-        
     }
 
     public void OnPointerEnter()
@@ -60,4 +50,12 @@ public class Helmet : MonoBehaviour {
         pointingTo = false;
     }
 
+    public void ToggleView()
+    {
+        MeshRenderer mr = GetComponentInChildren<BoxCollider>().gameObject.GetComponent<MeshRenderer>();
+        if (mr.enabled == true)
+            mr.enabled = false;
+        else
+            mr.enabled = true;
+    }
 }
