@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-E:/Proj/Welding_VR/Virtual_Welding_Project/Arc Welding/test2.apk
+E:/Proj/Welding_VR/Virtual_Welding_Project/Arc Welding/prototype_1.apk
 SceneListBegin?
 Assets/menu.unity
 Assets/Arc Welding.unity
