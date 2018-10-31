@@ -2,25 +2,59 @@
 
 public class Controls : MonoBehaviour {
 
-    public string[] States = { "EmptyHand", "HelmetOn", "GunEquipped", "CloseToTable", "Welding", "PauseMenu" };
-    public static string CurrentState;
-    public static int StateIndex;
+    public static string[] States = { "EmptyHand", "HelmetOn", "GunEquipped", "CloseToTable", "Welding", "PauseMenu" };
+    public static string CurrentState
+    {
+        get;
+        private set;
+    }
     
 	void Start () {
-        StateIndex = 0;
-        CurrentState = States[StateIndex];
+        CurrentState = "EmptyHand";
 	}
 	
 	void Update () {
 		
 	}
-    public void ResetLevel()
+    
+    public static void SwitchTo(string s)
     {
-        CurrentState = States[0];
+        for (int i = 0; i<States.Length; ++i)
+        {
+            if (s == States[i])
+            {
+                CurrentState = s;
+            }
+        }
     }
 
-    public void CHangeState(int index)
+    public static void ResetLevel()
     {
-        CurrentState = States[index];
+        CurrentState = "EmptyHand";
     }
+    public static void SwitchToEmptyhand()
+    {
+        CurrentState = "EmptyHand";
+    }
+    public static void SwitchToHelmetOn()
+    {
+        CurrentState = "HelmetOn";
+    }
+    public static void SwitchToGunEquipped()
+    {
+        CurrentState = "GunEquipped";
+    }
+    public static void SwitchToCloseToTable()
+    {
+        CurrentState = "CloseToTable";
+    }
+    public static void SwitchToWelding()
+    {
+        CurrentState = "Welding";
+    }
+    public static void SwitchToPauseMenu()
+    {
+        CurrentState = "PauseMenu";
+    }
+
 }
