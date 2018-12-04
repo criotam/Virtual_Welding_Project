@@ -1,19 +1,24 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class GunMovement : MonoBehaviour {
 
+    public GameObject Hand;
     public GameObject GunPosition;
     public Vector3 pos;
     public float speed = 1.0F;
     public GameObject WeldingPosition;
     public float MovementDistance;
 
+
     bool pointingTo;
     bool GunWeilded = false;
     Vector3 inititalPosition;
     public GameObject Parent;
+
     void Start()
     {
+        Hand.SetActive(false);
         pointingTo = false;
         //transform.position = Parent.transform.position;
         Parent.transform.position = GunPosition.transform.position;
@@ -33,6 +38,7 @@ public class GunMovement : MonoBehaviour {
         if (pointingTo && Input.GetButtonDown("Fire1") && Controls.CurrentState == "HelmetOn")
         {
             GetComponentInChildren<BoxCollider>().enabled = false;
+            Hand.SetActive(true);
             Controls.SwitchToGunEquipped();
             Debug.Log(Controls.CurrentState);
             GunWeilded = true;
@@ -57,6 +63,7 @@ public class GunMovement : MonoBehaviour {
         {
             GunWeilded = false;
             GetComponentInChildren<BoxCollider>().enabled = true;
+            Hand.SetActive(false);
             Controls.SwitchToHelmetOn();
             Parent.transform.position = GunPosition.transform.position;
             Debug.Log(Controls.CurrentState);

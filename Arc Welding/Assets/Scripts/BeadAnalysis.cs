@@ -1,30 +1,51 @@
-﻿using System.Collections;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class BeadAnalysis : MonoBehaviour {
 
-    GameObject[] Beads;
-    public float distance=0;
+    List<Vector3> ElectrodePosition = new List<Vector3>();
 
-	public void Analyse()
+    [SerializeField] GameObject GraphCanvas;
+
+    WindowGraph GraphWindow;
+
+    void Start()
     {
-        Beads = GameObject.FindGameObjectsWithTag("Beads");
-        Debug.Log(Beads.Length);
-        StartCoroutine(Calculate());
-        
-
+        GraphWindow = GraphCanvas.GetComponentInChildren<WindowGraph>();
+        GraphCanvas.transform.position = GraphCanvas.transform.position + new Vector3(0, -110, 0);
+    }
+ 
+    void Update()
+    {
+        Debug.Log(ElectrodePosition.Count);
     }
 
-    IEnumerator Calculate()
+    public void AddToPositionList(Vector3 pos)
     {
-        for (int i = 0; i<Beads.Length-1; ++i)
+        ElectrodePosition.Add(pos);
+    }
+
+    public void AnalyseSpeed()
+    {
+        if (ElectrodePosition.Count < 1)
+            return;
+        List<float> speed = new List<float>();
+        for (int i = 0; i<ElectrodePosition.Count-1; ++i)
         {
-            float d = Vector3.Distance(Beads[i].transform.position, Beads[i + 1].transform.position);
-            if (d > distance)
-                distance = d;
-            yield return new WaitForEndOfFrame();
+            while (ElectrodePosition[i+1] != Vector3.zero)
+            {
+                speed.Add(1000*Mathf.Abs(ElectrodePosition[i].z - ElectrodePosition[i + 1].z));
+                i++;
+            }
+            i = i + 1;
         }
-        
+        for (int i = 0; i < speed.Count; ++i)
+        {
+            Debug.Log(speed[i]);
+        }
+
+        GraphWindow.ShowSpeedGraph(speed);
+        GraphCanvas.transform.position = GraphCanvas.transform.position + new Vector3(0, +110, 0);
     }
 
 }

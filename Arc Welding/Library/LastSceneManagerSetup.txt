@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Arc Welding.unity
+- path: Assets/ControllerCallibarationScene.unity
   isLoaded: 1
   isActive: 1

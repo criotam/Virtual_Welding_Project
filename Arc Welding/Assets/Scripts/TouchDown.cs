@@ -8,6 +8,14 @@ public class TouchDown : MonoBehaviour {
     Collision co;
     Controls control;
     bool welding = false;
+
+    float timeLapse = 0f;
+
+    void Start()
+    {
+        control = GameObject.FindGameObjectWithTag("Controls").GetComponent<Controls>();
+    }
+
     void Update()
     {
         if (Controls.CurrentState == "CloseToTable" && Input.GetButtonDown("Fire1"))
@@ -19,6 +27,8 @@ public class TouchDown : MonoBehaviour {
             hm.ToggleView();
 
         }
+
+
         else if (Controls.CurrentState == "Welding" && Input.GetButtonUp("Fire1"))
         {
             sparks.SetActive(false);
@@ -26,37 +36,21 @@ public class TouchDown : MonoBehaviour {
             Controls.SwitchToCloseToTable();
             Debug.Log(Controls.CurrentState);
             hm.ToggleView();
+            control.GetComponent<BeadAnalysis>().AddToPositionList(new Vector3(0, 0, 0));
+        }
+
+        if (Controls.CurrentState == "Welding" && Input.GetButton("Fire1")){
+            if (timeLapse < 1)
+            {
+                timeLapse += Time.deltaTime;
+            }
+            else
+            {
+                timeLapse = 0f;
+                control.GetComponent<BeadAnalysis>().AddToPositionList(
+                    GetComponent<GunMovement>().Parent.transform.position);
+            }
         }
     }
-    /*
-	void OnCollisionEnter(Collision obj){
-        
-        if (obj.gameObject.CompareTag("WP") && Controls.CurrentState == "CloseToTable")  {
-            Controls.SwitchToWelding();
-            Debug.Log(Controls.CurrentState);
-            sparks.SetActive (true);
-		}
-	}
-    */
-	void OnCollisionStay(Collision obj){
-        //Debug.Log("Working");
-		if (welding) {
-            Debug.Log("double working");
-			ContactPoint contact = obj.contacts [0];
-			Quaternion rot = Quaternion.FromToRotation (Vector3.up, contact.normal);
-			Vector3 pos = contact.point;
-			Instantiate (beads,pos,rot);
-		}
-	}
-    /*
-	void OnCollisionExit(Collision collision){
-        
-        if (Controls.CurrentState == "Welding")
-        {
-            Controls.SwitchToCloseToTable();
-            Debug.Log(Controls.CurrentState);
-            sparks.SetActive(false);
-        }
-	}
-    */
+
 }

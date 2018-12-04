@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arc Welding", "Assembly-CSharp.csproj", "{45B79A87-D574-9621-8304-0BA14A503631}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{45B79A87-D574-9621-8304-0BA14A503631}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arc Welding", "Assembly-CSharp-Editor.csproj", "{95FBA1DF-F579-2ADD-8F96-12674D58E256}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{BDC11617-7FEC-378E-9CDB-AAD2D7355B4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor-firstpass", "Assembly-CSharp-Editor-firstpass.csproj", "{2BA36B1E-8C2E-64AB-FBD6-6EC94E8AACDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{95FBA1DF-F579-2ADD-8F96-12674D58E256}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{45B79A87-D574-9621-8304-0BA14A503631}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45B79A87-D574-9621-8304-0BA14A503631}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45B79A87-D574-9621-8304-0BA14A503631}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDC11617-7FEC-378E-9CDB-AAD2D7355B4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDC11617-7FEC-378E-9CDB-AAD2D7355B4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDC11617-7FEC-378E-9CDB-AAD2D7355B4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDC11617-7FEC-378E-9CDB-AAD2D7355B4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BA36B1E-8C2E-64AB-FBD6-6EC94E8AACDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BA36B1E-8C2E-64AB-FBD6-6EC94E8AACDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BA36B1E-8C2E-64AB-FBD6-6EC94E8AACDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BA36B1E-8C2E-64AB-FBD6-6EC94E8AACDC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{95FBA1DF-F579-2ADD-8F96-12674D58E256}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{95FBA1DF-F579-2ADD-8F96-12674D58E256}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95FBA1DF-F579-2ADD-8F96-12674D58E256}.Release|Any CPU.ActiveCfg = Release|Any CPU

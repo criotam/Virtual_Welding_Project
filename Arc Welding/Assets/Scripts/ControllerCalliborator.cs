@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class ControllerCalliborator : MonoBehaviour {
 
-    //public Text text;
     public Button A, B, C, D;
     public Image img;
     void Update()
@@ -50,4 +50,8 @@ public class ControllerCalliborator : MonoBehaviour {
             img.color = Color.green;
     }
     
+    public void BackTOHome()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
