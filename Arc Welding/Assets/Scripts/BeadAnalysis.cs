@@ -8,7 +8,7 @@ public class BeadAnalysis : MonoBehaviour {
     [SerializeField] GameObject GraphCanvas;
 
     WindowGraph GraphWindow;
-
+    bool AnalyseButton = false;
     void Start()
     {
         GraphWindow = GraphCanvas.GetComponentInChildren<WindowGraph>();
@@ -17,7 +17,19 @@ public class BeadAnalysis : MonoBehaviour {
  
     void Update()
     {
+        if (AnalyseButton && Input.GetButtonDown("Fire1"))
+        {
+            AnalyseSpeed();
+        }
+
         Debug.Log(ElectrodePosition.Count);
+    }
+
+    public void OnAnalyseButtonEnter()
+    {
+        if (AnalyseButton)
+            AnalyseButton = false;
+        else AnalyseButton = true;
     }
 
     public void AddToPositionList(Vector3 pos)
@@ -25,7 +37,7 @@ public class BeadAnalysis : MonoBehaviour {
         ElectrodePosition.Add(pos);
     }
 
-    public void AnalyseSpeed()
+    void AnalyseSpeed()
     {
         if (ElectrodePosition.Count < 1)
             return;
@@ -36,8 +48,12 @@ public class BeadAnalysis : MonoBehaviour {
             {
                 speed.Add(1000*Mathf.Abs(ElectrodePosition[i].z - ElectrodePosition[i + 1].z));
                 i++;
+                if (i == 30)
+                    break;
             }
             i = i + 1;
+            if (i > 30)
+                break;
         }
         for (int i = 0; i < speed.Count; ++i)
         {

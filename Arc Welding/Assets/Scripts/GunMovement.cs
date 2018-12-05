@@ -28,8 +28,8 @@ public class GunMovement : MonoBehaviour {
 
         if (GunWeilded)
         {
-            float translationY = Input.GetAxis("Vertical") * speed * Time.deltaTime;
-            float translationX = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+            float translationY = Input.GetAxis("Vertical") * speed * Time.deltaTime * 0.1f;
+            float translationX = Input.GetAxis("Horizontal") * speed * Time.deltaTime * 0.1f;
             Vector3 newPos = Parent.transform.position + new Vector3(translationX, 0, translationY);
             if (Vector3.Distance(newPos, WeldingPosition.transform.position) < MovementDistance)
                 Parent.transform.position = newPos;
