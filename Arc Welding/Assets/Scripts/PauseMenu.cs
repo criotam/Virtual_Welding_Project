@@ -10,13 +10,26 @@ public class PauseMenu : MonoBehaviour {
     bool MenuActive = false;
     string PreviousState;
 
+    bool GameButton = false, HomeButton = false;
+
+
     void Start()
     {
+        MenuActive = false;
         menu.SetActive(MenuActive);
     }
 
     void Update()
     {
+        if (GameButton && Input.GetButtonDown("Fire1"))
+        {
+            ReturnToGame();
+        }
+        else if (HomeButton && Input.GetButtonDown("Fire1"))
+        {
+            ReturnToMainMenu();
+        }
+
         if (Controls.CurrentState != "Welding" && Controls.CurrentState != "CloseToTable")
         {
             if (Input.GetButtonDown("Cancel") || Input.GetButtonDown("Jump"))
@@ -43,14 +56,29 @@ public class PauseMenu : MonoBehaviour {
 
     }
 
-    public void ReturnToGame()
+    public void OnHomeButtonEnter()
+    {
+        if (HomeButton)
+            HomeButton = false;
+        else
+            HomeButton = true;
+    }
+    public void OnGameButtonEnter()
+    {
+        if (GameButton)
+            GameButton = false;
+        else GameButton = true;
+    }
+
+
+    void ReturnToGame()
     {
         MenuActive = false;
         Controls.SwitchTo(PreviousState);
         menu.SetActive(MenuActive);
     }
 
-    public void ReturnToMainMenu()
+    void ReturnToMainMenu()
     {
         SceneManager.LoadScene(0);
     }

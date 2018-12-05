@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Arc Welding.unity
+- path: Assets/Tjoint.unity
   isLoaded: 1
   isActive: 1

@@ -1,0 +1,281 @@
+fileFormatVersion: 2
+guid: 2cbfec3ed09739e47af0ef5780861d80
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Block:INS-G3UBF
+    100002: Block:INS-G40O2
+    100004: Block:INS-G4837
+    100006: Block:INS-G4GA5
+    100008: Block:INS-G4PPB
+    100010: Block:INS-G4STP
+    100012: Block:INS-G5F65
+    100014: Block:INS-G5FHW
+    100016: Block:INS-G6BXB
+    100018: Block:INS-G6O3P
+    100020: Block:INS-G7HKE
+    100022: Block:INS-G7MON
+    100024: Block:INS-G7V4C
+    100026: Block:INS-G7YSH
+    100028: Block:INS-G8JWG
+    100030: Block:INS-G8RH2
+    100032: Block:INS-GBFOZ
+    100034: Block:INS-GC5JC
+    100036: Block:INS-GDYXS
+    100038: Block:INS-GFEVQ
+    100040: Block:INS-GGTOQ
+    100042: Block:INS-GIAMV
+    100044: Block:INS-GK2Y5
+    100046: Block:INS-GR65W
+    100048: //RootNode
+    100050: Layer:01
+    100052: Layer:01 1
+    100054: Layer:01 2
+    100056: Layer:02
+    100058: Layer:02 1
+    100060: Layer:03
+    100062: Layer:03 1
+    100064: Layer:04L
+    100066: Layer:04L 1
+    100068: Layer:04L 2
+    100070: Layer:04L 3
+    100072: Layer:04L 4
+    100074: Layer:04L 5
+    100076: Layer:04L 6
+    100078: Layer:04R
+    100080: Layer:04R 1
+    100082: Layer:04R 2
+    100084: Layer:04R 3
+    100086: Layer:04R 4
+    100088: Layer:04R 5
+    100090: Layer:04R 6
+    100092: Layer:05L
+    100094: Layer:05L 1
+    100096: Layer:05L 2
+    100098: Layer:05L 3
+    100100: Layer:05L 4
+    100102: Layer:05L 5
+    100104: Layer:05L 6
+    100106: Layer:05R
+    100108: Layer:05R 1
+    100110: Layer:05R 2
+    100112: Layer:05R 3
+    100114: Layer:05R 4
+    100116: Layer:05R 5
+    100118: Layer:05R 6
+    400000: Block:INS-G3UBF
+    400002: Block:INS-G40O2
+    400004: Block:INS-G4837
+    400006: Block:INS-G4GA5
+    400008: Block:INS-G4PPB
+    400010: Block:INS-G4STP
+    400012: Block:INS-G5F65
+    400014: Block:INS-G5FHW
+    400016: Block:INS-G6BXB
+    400018: Block:INS-G6O3P
+    400020: Block:INS-G7HKE
+    400022: Block:INS-G7MON
+    400024: Block:INS-G7V4C
+    400026: Block:INS-G7YSH
+    400028: Block:INS-G8JWG
+    400030: Block:INS-G8RH2
+    400032: Block:INS-GBFOZ
+    400034: Block:INS-GC5JC
+    400036: Block:INS-GDYXS
+    400038: Block:INS-GFEVQ
+    400040: Block:INS-GGTOQ
+    400042: Block:INS-GIAMV
+    400044: Block:INS-GK2Y5
+    400046: Block:INS-GR65W
+    400048: //RootNode
+    400050: Layer:01
+    400052: Layer:01 1
+    400054: Layer:01 2
+    400056: Layer:02
+    400058: Layer:02 1
+    400060: Layer:03
+    400062: Layer:03 1
+    400064: Layer:04L
+    400066: Layer:04L 1
+    400068: Layer:04L 2
+    400070: Layer:04L 3
+    400072: Layer:04L 4
+    400074: Layer:04L 5
+    400076: Layer:04L 6
+    400078: Layer:04R
+    400080: Layer:04R 1
+    400082: Layer:04R 2
+    400084: Layer:04R 3
+    400086: Layer:04R 4
+    400088: Layer:04R 5
+    400090: Layer:04R 6
+    400092: Layer:05L
+    400094: Layer:05L 1
+    400096: Layer:05L 2
+    400098: Layer:05L 3
+    400100: Layer:05L 4
+    400102: Layer:05L 5
+    400104: Layer:05L 6
+    400106: Layer:05R
+    400108: Layer:05R 1
+    400110: Layer:05R 2
+    400112: Layer:05R 3
+    400114: Layer:05R 4
+    400116: Layer:05R 5
+    400118: Layer:05R 6
+    2100000: No Name
+    2300000: Layer:01
+    2300002: Layer:01 1
+    2300004: Layer:02 1
+    2300006: Layer:03
+    2300008: Layer:04L
+    2300010: Layer:04L 2
+    2300012: Layer:04L 3
+    2300014: Layer:04L 4
+    2300016: Layer:04L 6
+    2300018: Layer:04R 1
+    2300020: Layer:04R 3
+    2300022: Layer:04R 4
+    2300024: Layer:04R 5
+    2300026: Layer:04R 6
+    2300028: Layer:05L 1
+    2300030: Layer:05L 2
+    2300032: Layer:05L 3
+    2300034: Layer:05L 4
+    2300036: Layer:05L 6
+    2300038: Layer:05R
+    2300040: Layer:05R 1
+    2300042: Layer:05R 3
+    2300044: Layer:05R 4
+    2300046: Layer:05R 6
+    3300000: Layer:01
+    3300002: Layer:01 1
+    3300004: Layer:02 1
+    3300006: Layer:03
+    3300008: Layer:04L
+    3300010: Layer:04L 2
+    3300012: Layer:04L 3
+    3300014: Layer:04L 4
+    3300016: Layer:04L 6
+    3300018: Layer:04R 1
+    3300020: Layer:04R 3
+    3300022: Layer:04R 4
+    3300024: Layer:04R 5
+    3300026: Layer:04R 6
+    3300028: Layer:05L 1
+    3300030: Layer:05L 2
+    3300032: Layer:05L 3
+    3300034: Layer:05L 4
+    3300036: Layer:05L 6
+    3300038: Layer:05R
+    3300040: Layer:05R 1
+    3300042: Layer:05R 3
+    3300044: Layer:05R 4
+    3300046: Layer:05R 6
+    4300000: Layer:01
+    4300002: Layer:04L
+    4300004: Layer:04L
+    4300006: Layer:04L
+    4300008: Layer:05L
+    4300010: Layer:05R
+    4300012: Layer:05L
+    4300014: Layer:05R
+    4300016: Layer:04R
+    4300018: Layer:04R
+    4300020: Layer:04R
+    4300022: Layer:04L
+    4300024: Layer:04R
+    4300026: Layer:04L
+    4300028: Layer:04R
+    4300030: Layer:05L
+    4300032: Layer:05R
+    4300034: Layer:05L
+    4300036: Layer:05R
+    4300038: Layer:01
+    4300040: Layer:05L
+    4300042: Layer:05R
+    4300044: Layer:03
+    4300046: Layer:02
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.0254
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

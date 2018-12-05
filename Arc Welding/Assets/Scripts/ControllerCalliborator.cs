@@ -1,12 +1,19 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class ControllerCalliborator : MonoBehaviour {
 
-    //public Text text;
     public Button A, B, C, D;
     public Image img;
+    bool HomeButton = false;
+
     void Update()
     {
+        if (HomeButton && Input.GetButtonDown("Fire1"))
+        {
+            BackTOHome();
+        }
+
         if (Input.GetButton("Fire1"))
         {
             A.GetComponent<Image>().color = Color.red;
@@ -50,4 +57,17 @@ public class ControllerCalliborator : MonoBehaviour {
             img.color = Color.green;
     }
     
+    public void HomeButtonEnter()
+    {
+        Debug.Log(HomeButton);
+        if (HomeButton)
+            HomeButton = false;
+        else
+            HomeButton = true;
+    }
+
+    void BackTOHome()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
