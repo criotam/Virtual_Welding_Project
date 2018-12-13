@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour {
@@ -9,12 +7,17 @@ public class PauseMenu : MonoBehaviour {
     public GameObject menu;
     bool MenuActive = false;
     string PreviousState;
-
+    AudioSource Source;
     bool GameButton = false, HomeButton = false;
+    Controls control;
 
 
     void Start()
     {
+        control = GameObject.FindGameObjectWithTag("Controls").GetComponent<Controls>();
+        Source = GameObject.FindGameObjectWithTag("Controls").GetComponent<AudioSource>();
+        GameButton = false;
+        HomeButton = false;
         MenuActive = false;
         menu.SetActive(MenuActive);
     }
@@ -23,30 +26,39 @@ public class PauseMenu : MonoBehaviour {
     {
         if (GameButton && Input.GetButtonDown("Fire1"))
         {
+            Source.Play();
             ReturnToGame();
         }
-        else if (HomeButton && Input.GetButtonDown("Fire1"))
+        if (HomeButton && Input.GetButtonDown("Fire1"))
         {
+            Source.Play();
             ReturnToMainMenu();
         }
 
         if (Controls.CurrentState != "Welding" && Controls.CurrentState != "CloseToTable")
         {
-            if (Input.GetButtonDown("Cancel") || Input.GetButtonDown("Jump"))
+            if (Input.GetButtonDown("Jump"))
             {
                 if (MenuActive)
                 {
                     MenuActive = false;
                     Controls.SwitchTo(PreviousState);
+                    GameButton = false;
+                    HomeButton = false;
+                    control.GetComponent<BeadAnalysis>().AnalyseButton = false;
+
+                    Debug.Log(Controls.CurrentState);
                 }
                 else
                 {
                     MenuActive = true;
                     PreviousState = Controls.CurrentState;
                     Controls.SwitchToPauseMenu();
+                    Debug.Log(Controls.CurrentState);
                 }
                 menu.SetActive(MenuActive);
             }
+            
         }
         if (MenuActive)
         {
@@ -58,18 +70,21 @@ public class PauseMenu : MonoBehaviour {
 
     public void OnHomeButtonEnter()
     {
-        if (HomeButton)
-            HomeButton = false;
-        else
-            HomeButton = true;
+        HomeButton = true;
     }
-    public void OnGameButtonEnter()
+    public void OnHomeButtonexit()
     {
-        if (GameButton)
-            GameButton = false;
-        else GameButton = true;
+        HomeButton = false;
     }
 
+    public void OnGameButtonEnter()
+    {
+        GameButton = true;
+    }
+    public void OnGameButtonExit()
+    {
+        GameButton = false;
+    }
 
     void ReturnToGame()
     {

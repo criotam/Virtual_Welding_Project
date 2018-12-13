@@ -6,11 +6,18 @@ public class ControllerCalliborator : MonoBehaviour {
     public Button A, B, C, D;
     public Image img;
     bool HomeButton = false;
+    AudioSource Source;
+
+    void Start()
+    {
+        Source = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
         if (HomeButton && Input.GetButtonDown("Fire1"))
         {
+            Source.Play();
             BackTOHome();
         }
 

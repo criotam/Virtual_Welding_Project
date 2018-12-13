@@ -168,7 +168,9 @@
      <Compile Include="Assets\Scripts\Helmet.cs" />
      <Compile Include="Assets\Scripts\Menu.cs" />
      <Compile Include="Assets\Scripts\PauseMenu.cs" />
+     <Compile Include="Assets\Scripts\Report.cs" />
      <Compile Include="Assets\Scripts\TouchDown.cs" />
+     <Compile Include="Assets\Scripts\TypingScript.cs" />
      <Compile Include="Assets\Scripts\WindowGraph.cs" />
      <None Include="Assets\GoogleVR\Shaders\GvrUIOverlayFont.shader" />
      <None Include="Assets\GoogleVR\Shaders\GvrAdditiveOverlay.shader" />

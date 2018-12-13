@@ -5,14 +5,21 @@ public class TouchDown : MonoBehaviour {
 	public GameObject beads;
     public Helmet hm;
 
+    [SerializeField]
+    GameObject[] ElectrodePositions;
+
     Collision co;
     Controls control;
     bool welding = false;
-
+    int PosID;
     float timeLapse = 0f;
+
+    AudioSource Source;
 
     void Start()
     {
+        PosID = 0;
+        Source = GetComponentInParent<AudioSource>();
         control = GameObject.FindGameObjectWithTag("Controls").GetComponent<Controls>();
     }
 
@@ -24,8 +31,15 @@ public class TouchDown : MonoBehaviour {
             welding = true;
             Controls.SwitchToWelding();
             Debug.Log(Controls.CurrentState);
+            Source.Play();
             hm.ToggleView();
 
+        }
+        if (Controls.CurrentState == "CloseToTable" && Input.GetButtonDown("Jump"))
+        {
+            GetComponentInParent<AudioSource>().gameObject.transform.position = ElectrodePositions[(PosID + 1) % 2].transform.position;
+            GetComponentInParent<AudioSource>().gameObject.transform.rotation = ElectrodePositions[(PosID + 1) % 2].transform.rotation;
+            PosID = PosID + 1;
         }
 
 
@@ -35,6 +49,7 @@ public class TouchDown : MonoBehaviour {
             welding = false;
             Controls.SwitchToCloseToTable();
             Debug.Log(Controls.CurrentState);
+            Source.Stop();
             hm.ToggleView();
             control.GetComponent<BeadAnalysis>().AddToPositionList(new Vector3(0, 0, 0));
         }

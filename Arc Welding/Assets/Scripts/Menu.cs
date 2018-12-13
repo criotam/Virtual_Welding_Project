@@ -5,6 +5,7 @@ public class Menu : MonoBehaviour {
 
     [SerializeField]
     GameObject Panel_1, Panel_2;
+    AudioSource Source;
 
     bool WeldingButton = false, ControllerButton = false, QuitButton = false;
     bool ButtJointButton = false, CornerJointButton = false, LapJointButton = false, TJointButton = false;
@@ -12,6 +13,11 @@ public class Menu : MonoBehaviour {
 
     void Start()
     {
+        Source = GetComponentInParent<AudioSource>();
+        WeldingButton = false; ControllerButton = false; QuitButton = false;
+        ButtJointButton = false; CornerJointButton = false; LapJointButton = false; TJointButton = false;
+        BackButton = false;
+
         if (Panel_2 != null)
         {
             Panel_1.SetActive(true);
@@ -23,18 +29,22 @@ public class Menu : MonoBehaviour {
     {
         if (WeldingButton && Input.GetButtonDown("Fire1"))
         {
+            Source.Play();
             LoadPanel_2();
         }
         else if (ControllerButton && Input.GetButtonDown("Fire1"))
         {
+            Source.Play();
             StartScene(5);
         }
-        else if (QuitButton && Input.GetButtonDown("FIre1"))
+        else if (QuitButton && Input.GetButtonDown("Fire1"))
         {
+            Source.Play();
             Quit();
         }
         else if (ButtJointButton && Input.GetButtonDown("Fire1"))
         {
+            Source.Play();
             StartScene(1);
         }
         else if (CornerJointButton && Input.GetButtonDown("Fire1"))
@@ -43,79 +53,91 @@ public class Menu : MonoBehaviour {
         }
         else if (LapJointButton && Input.GetButtonDown("Fire1"))
         {
+            Source.Play();
             StartScene(2);
         }
         else if (TJointButton && Input.GetButtonDown("Fire1"))
         {
+            Source.Play();
             StartScene(4);
         }
         else if (BackButton && Input.GetButtonDown("Fire1"))
         {
-            LoadPanel_2();
+            Source.Play();
+            LoadPanel_1();
         }
     }
 
     public void OnWeldingButtonEnter()
     {
-        if (WeldingButton)
-            WeldingButton = false;
-        else
-            WeldingButton = true;
+        WeldingButton = true;
+    }
+    public void OnWeldingButtonExit()
+    {
+        WeldingButton = false;
     }
 
     public void OnControllerEnter()
     {
-        if (ControllerButton)
-            ControllerButton = false;
-        else
-            ControllerButton = true;
+        ControllerButton = true;
+    }
+    public void OnControllerExit()
+    {
+        ControllerButton = false;
     }
 
     public void OnQuitButtonEnter()
     {
-        if (QuitButton)
-            QuitButton = false;
-        else
-            QuitButton = true;
+        QuitButton = true;
+    }
+    public void OnQuitButtonExit()
+    {
+        QuitButton = false;
     }
 
     public void OnButtJointEnter()
     {
-        if (ButtJointButton)
-            ButtJointButton = false;
-        else
-            ButtJointButton = true;
+        ButtJointButton = true;
+    }
+    public void OnButtJointExit()
+    {
+        ButtJointButton = false;
     }
 
     public void OnCornerJointEnter()
     {
-        if (CornerJointButton)
-            CornerJointButton = false;
-        else
-            CornerJointButton = true;
+        CornerJointButton = true;
     }
+    public void OnCornerJointExit()
+    {
+        CornerJointButton = false;
+    }
+
     public void OnLapJointEnter()
     {
-        if (LapJointButton)
-            LapJointButton = false;
-        else
-            LapJointButton = true;
+        LapJointButton = true;
+    }
+    public void OnLapJointExit()
+    {
+        LapJointButton = false;
     }
 
     public void OnTJointEnter()
     {
-        if (TJointButton)
-            TJointButton = false;
-        else
-            TJointButton = true;
+        TJointButton = true;
+    }
+    public void OnTJointExit()
+    {
+        TJointButton = false;
     }
 
     public void OnBackButtonEnter()
     {
-        if (BackButton)
-            BackButton = false;
-        else
-            BackButton = true;
+        BackButton = true;
+    }
+    public void OnBackButtonExit()
+    {
+        BackButton = false;
     }
 
 	void StartScene(int i)
